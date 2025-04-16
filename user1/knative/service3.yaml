@@ -1,0 +1,15 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: entered-service1
+  namespace: user1
+spec:
+  template:
+    spec:
+      containers:
+        - image: ghcr.io/knative/helloworld-go:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TARGET
+              value: "Complete to check the state whether your thumbnail was generated!!"
